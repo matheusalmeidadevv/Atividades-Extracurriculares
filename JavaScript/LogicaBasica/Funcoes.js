@@ -38,6 +38,9 @@ function Dividir(a, b){
 
 const readline = require("readline-sync");
 
+//Antes eu havia colocado a variavel op como var dentro do proprio loop, podendo assim utilizar ela durante todo o programa, mas isso gera um erro de logica porque não quero que op vaze pra todo o programa
+let op;
+
 do{
 let num1 = readline.question("digite o primeiro numero: \n");
 
@@ -47,7 +50,7 @@ let num2 = readline.question("digite o segundo numero: \n");
 num1 = Number(num1); 
 num2 = Number(num2);
 
-var op = readline.question("O que você deseja fazer: \n1-Somar \n2-Subtrair \n3-Multiplicar \n4-Dividir \n5-Sair \n");
+op = readline.question("O que você deseja fazer: \n1-Somar \n2-Subtrair \n3-Multiplicar \n4-Dividir \n5-Sair \n");
 
 op = Number(op);
 
@@ -70,7 +73,7 @@ switch(op){
     
     case 4:
         
-        if(num1 === 0 || num2 === 0){
+        if(num2 === 0){
 
         console.log("ERRO!!!!!!\nA divisão de qualquer número por zero é indefinida");
 
